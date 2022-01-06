@@ -17,10 +17,14 @@ class ViewController: UIViewController {
     let animationView = AnimationView(name: "loading")
     let imagePicker = UIImagePickerController()
     
+    var petClassifier = PetClassifier()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setAnimation()
+        
+        petClassifier.delegate = self
         
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -82,7 +86,23 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         if let userPickedImage = info[.editedImage] as? UIImage {
             petImageView.image =  userPickedImage
+            
+            guard let convertedCIImage = CIImage(image: userPickedImage) else {
+                fatalError("App failed to convert the image to a CIImage.")
+            }
+            petClassifier.getPetClassification(petImage: convertedCIImage)
         }
         
+    }
+}
+
+//MARK: - Pet classifier delegate
+
+extension ViewController: PetClassifierDelegate {
+    func didFinishClassification(_ petImageClassifierModel: PetClassifier, petClassification: String) {
+        petLabel.text = "Your pet is a \(petClassification)!"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.stopAnimation()
+        }
     }
 }
