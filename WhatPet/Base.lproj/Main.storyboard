@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xzd-G6-JxI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--What Pet Do You Have?-->
+        <scene sceneID="SB4-EA-Fhx">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Lw5-hm-lCA" customClass="ViewController" customModule="WhatPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BaT-4x-ho6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMy-aW-aON">
+                                <rect key="frame" x="50" y="522" width="314" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share a photo of your pet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cy3-Ev-edQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="144"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Cy3-Ev-edQ" firstAttribute="leading" secondItem="xMy-aW-aON" secondAttribute="leading" id="Al0-NK-zJy"/>
+                                    <constraint firstItem="Cy3-Ev-edQ" firstAttribute="top" secondItem="xMy-aW-aON" secondAttribute="top" id="L41-3s-hzZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cy3-Ev-edQ" secondAttribute="bottom" id="VYX-dT-XnQ"/>
+                                    <constraint firstAttribute="height" priority="500" constant="120" id="iof-Vs-Be5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cy3-Ev-edQ" secondAttribute="trailing" id="mTb-u5-BfZ"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9f9-Mz-zFo">
+                                <rect key="frame" x="20" y="118.5" width="374" height="373"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9f9-Mz-zFo" secondAttribute="height" multiplier="1:1" id="Ga1-5f-cDq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EBy-n7-Rac"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EBy-n7-Rac" firstAttribute="trailing" secondItem="9f9-Mz-zFo" secondAttribute="trailing" constant="20" id="AQ3-wa-ghh"/>
+                            <constraint firstItem="EBy-n7-Rac" firstAttribute="trailing" secondItem="xMy-aW-aON" secondAttribute="trailing" constant="50" id="JEF-tw-KcB"/>
+                            <constraint firstItem="9f9-Mz-zFo" firstAttribute="top" secondItem="EBy-n7-Rac" secondAttribute="top" constant="30" id="KDa-pC-df0"/>
+                            <constraint firstItem="xMy-aW-aON" firstAttribute="leading" secondItem="EBy-n7-Rac" secondAttribute="leading" constant="50" id="NO3-cc-3zG"/>
+                            <constraint firstItem="9f9-Mz-zFo" firstAttribute="leading" secondItem="EBy-n7-Rac" secondAttribute="leading" constant="20" id="Tym-wG-Ky6"/>
+                            <constraint firstItem="xMy-aW-aON" firstAttribute="top" secondItem="9f9-Mz-zFo" secondAttribute="bottom" constant="30" id="vl9-Ez-kcq"/>
+                            <constraint firstItem="EBy-n7-Rac" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xMy-aW-aON" secondAttribute="bottom" constant="30" id="zNU-VR-a54"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="What Pet Do You Have?" id="4Lp-ug-6ao">
+                        <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="yXn-VJ-STf">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="cameraTapped:" destination="Lw5-hm-lCA" id="X2B-nZ-s6Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelView" destination="xMy-aW-aON" id="yGU-Ih-OFX"/>
+                        <outlet property="petImageView" destination="9f9-Mz-zFo" id="xcj-TG-F9Z"/>
+                        <outlet property="petLabel" destination="Cy3-Ev-edQ" id="nOF-lw-dV9"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxx-98-Thp" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1174" y="46"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2dF-JO-lcF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xzd-G6-JxI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9JK-z5-VqR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="NavBarColor"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" systemColor="labelColor"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lw5-hm-lCA" kind="relationship" relationship="rootViewController" id="pdY-eq-yu8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B50-m6-SsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="46"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="pawprint.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="NavBarColor">
+            <color red="1" green="0.7803921568627451" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
